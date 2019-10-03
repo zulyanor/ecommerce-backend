@@ -87,18 +87,18 @@ def after_request(response):
 # Import blueprints
 #######################
 
-# from blueprints.user.resources import bp_user
+from blueprints.auth import bp_auth
+from blueprints.user.resource import bp_user
 # from blueprints.product.resources import bp_product
-# from blueprints.auth import bp_auth
 # from blueprints.user_detail.resources import bp_user_details
 # from blueprints.transaction.resources import bp_transaction
 # from blueprints.cart.resources import bp_cart
 # from blueprints.product_detail.resources import bp_product_detail
 # from blueprints.transaction_detail.resources import bp_trans_details
 
-# app.register_blueprint(bp_user, url_prefix = '/register')
+app.register_blueprint(bp_auth, url_prefix = '/login')
+app.register_blueprint(bp_user, url_prefix = '/user')
 # app.register_blueprint(bp_product, url_prefix = '/product')
-# app.register_blueprint(bp_auth, url_prefix = '/login')
 # app.register_blueprint(bp_user_details, url_prefix = '/user_details')
 # app.register_blueprint(bp_transaction, url_prefix = '/transaction')
 # app.register_blueprint(bp_cart, url_prefix = '/cart')
