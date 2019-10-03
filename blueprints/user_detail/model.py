@@ -6,7 +6,7 @@ class UserDetail(db.Model):
     user_id = db.Column(db.Integer, primary_key = True)
     full_name = db.Column(db.String(255), nullable = False)
     address = db.Column(db.String(255), nullable = True)
-    phone = db.Column(db.String(20), nullable = True)
+    phone = db.Column(db.String(200), nullable = True)
 
     response_fields = {
         'user_id':fields.Integer,
