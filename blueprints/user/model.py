@@ -28,10 +28,19 @@ class User(db.Model):
         'username':fields.String
     }
 
+    view_response_fields = {
+        'id':fields.Integer,
+        'username':fields.String,
+        'email':fields.String,
+        'gender':fields.Integer,
+        'created_at':fields.DateTime
+    }
+
     def __init__(self, username, email, password, gender):
         self.username = username
         self.email = email
         self.password = password
         self.gender = gender
+        self.first_login_status = 1
         self.created_at = datetime.utcnow()
         
